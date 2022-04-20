@@ -16,23 +16,11 @@
         <form class="form-1" action="" method="GET">
             <h1>Login Form</h1>
             <div class="form-group">
-            <label for="name">Police Name: </label>
+            <label for="name">Username: </label>
             <input type="text" id="name" class="form-control" placeholder="Name"><br>
             <label for="password">Password: </label>                
                 <input type="password" id="password" class="form-control" placeholder="Password"><br>
-            <label for="rank-label">Level of Authority</label>
-                <select name="rank" id="rank" class="form-control">
-                    <option value="" selected hidden>...</option>
-                    <option value="admin">Admin</option>
-                    <option value="officer">Officer</option>
-                    <option value="officer">Visitor</option>
-                </select>   
-                <br>
-                <a class="btn btn-primary">Forgot Password?</a>
-                <a id="register" class="btn btn-secondary">Don't have an Account?</a>
-                <br> 
-                <br>   
-                <input type="submit" class="form-control btn btn-outline-primary" value="Login" >
+            <input type="submit" class="form-control btn btn-outline-primary" value="Login" >
             </div>
         </form>
     </div>
@@ -41,6 +29,8 @@
         <form class="form-1" action="" method="GET">
             <h1>Register Form</h1>
             <div class="form-group">
+            <label for="name">Email: </label>
+            <input type="email" id="email" class="form-control" placeholder="Email Address"><br>
             <label for="name">Police Name: </label>
             <input type="text" id="name" class="form-control" placeholder="Name"><br>
             <label for="password">Password: </label>                
@@ -48,7 +38,6 @@
             <label for="rank-label">Level of Authority</label>
                 <select name="rank" id="rank" class="form-control">
                     <option value="" selected hidden>...</option>
-                    <option value="admin">Admin</option>
                     <option value="officer">Officer</option>
                     <option value="officer">Visitor</option>
                 </select>           
