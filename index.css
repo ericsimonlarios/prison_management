@@ -46,3 +46,11 @@ body {
 .link-container a:hover {        
    cursor: pointer;
 }
+.alert-handler{
+    display: none;
+    text-align: center;
+    font-size: 14px;
+}
+.admin-form-heading{
+    padding: 10% 0;
+}
