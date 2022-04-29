@@ -18,26 +18,6 @@
             <div class="img-slide-show-container">
                 <img class="img-slide-show w3-animate-top" id="img-slide-show" src="../RES/awesome-bg-kb.jpg" alt="">
             </div>
-<<<<<<< HEAD
-            <div class="slide-show-previous-button" onclick="moveImg(-1)">
-                <div class="previous-button-1 right"></div>
-            </div>
-            <div class="slide-show-next-button" onclick="moveImg(1)">
-                <div class="previous-button-1 left"></div>
-            </div>
-            <div class="flickity-dots-container" style="visibility: hidden">
-                <ul class="flickity-dots-ul">
-                    <li class="flickity-dots current-img" onclick="changeImg(1)"></li>
-                    <li class="flickity-dots" onclick="changeImg(2)"></li>
-                    <li class="flickity-dots" onclick="changeImg(3)"></li>
-                </ul>
-            </div>
-        </div>
-        </div>
-        <div class="container">
-
-        </div>
-=======
             <div class="button-container">
                 <div class="slide-show-previous-button" onclick="moveImg(-1)">
                     <div class="previous-button-1 right"></div>
@@ -48,7 +28,6 @@
             </div>         
         </div>
 </div>
->>>>>>> a51f882f0fe69907ed5af80bb530516da83659bf
 </body>
 <script src="temp.js">
 
