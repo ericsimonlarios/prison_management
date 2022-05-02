@@ -16,6 +16,7 @@
     <?php
         include "nav.php";
     ?>
+    
     <!-- SLIDE SHOWW -->
     <div class="slide-show-container">
         <div class="img-slide-show-container">

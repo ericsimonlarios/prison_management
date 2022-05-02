@@ -12,6 +12,10 @@ html {
 body {
     overflow-x: hidden;
 }
+.admin-login-container{
+    display: flex;
+    flex-direction: row;
+}
 .for-image {
     width: 70%;
     height: 100vh;
@@ -22,21 +26,7 @@ body {
 .for-forms{ 
     width: 30%;
     height: 100vh;
-    position: absolute;
-    right: 0%;
     padding: 4.8%;
-    transition: all .75s ease-in-out;
-
-}
-.register{
-    display: block;
-    position: absolute;
-    width: 30%;
-    height: 100vh;
-    border: 1px solid black;
-    right:-100%;
-    padding: 4.8%;
-    transition: all .75s ease-in-out;
 }
 .link-container{
     display: flex;
