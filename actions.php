@@ -8,14 +8,14 @@
         $pfirst     = $_POST['pfirst'];
         $plast      = $_POST['plast'];
         $pdate      = $_POST['pdate'];
-        
+        $stats      = "Pending";
         if(empty($vname) || empty($vemail) || empty($vcontact) || empty($vadd) || empty($pfirst) || empty($plast) || empty($pdate)){
             echo  "Please populate all fields";
             header("location: appointment.php?status=error&message=Should fill all input fields");
             die();
         }   
         
-        if(insertAppointment($vname,$vemail,$vcontact,$vadd,$pfirst,$plast,$pdate)){
+        if(insertAppointment($vname,$vemail,$vcontact,$vadd,$pfirst,$plast,$pdate,$stats)){
             header('location: appointment.php?status=success&message=Appointment Request Successful');
             die();
         }else{
@@ -24,7 +24,7 @@
         }
     }
 
-    function insertAppointment($vname,$vemail,$vcontact,$vadd,$pfirst,$plast,$pdate){
+    function insertAppointment($vname,$vemail,$vcontact,$vadd,$pfirst,$plast,$pdate,$stats){
         $vname = mysqlentities_fix_string($vname);
         $vemail = mysqlentities_fix_string($vemail);
         $vcontact = mysqlentities_fix_string($vcontact);
@@ -33,9 +33,9 @@
         $plast = mysqlentities_fix_string($plast);
 
         $con = connect();
-        $insertSQL = "INSERT into appointment (vname,vemail,vcontact,vadd,pfirst,plast,pdate) VALUES(?,?,?,?,?,?,?)";
+        $insertSQL = "INSERT into appointment (vname,vemail,vcontact,vadd,pfirst,plast,pdate,stats) VALUES(?,?,?,?,?,?,?,?)";
         $stmt = $con -> prepare($insertSQL);
-        $stmt->bind_param('sssssss',  $vname, $vemail, $vcontact, $vadd,$pfirst,$plast,$pdate);
+        $stmt->bind_param('ssssssss',  $vname, $vemail, $vcontact, $vadd,$pfirst,$plast,$pdate,$stats);
         if(!$stmt->execute()){
             $error = $con->errno . " " . $con->error;
             echo $error;
