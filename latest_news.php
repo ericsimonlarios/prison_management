@@ -7,27 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="temp.css">
+    <link rel="stylesheet" href="latest_news.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Container wrapper -->
         <div class="container-fluid">
-            <!-- Toggle button -->
             <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
-
-            <!-- Collapsible wrapper -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <!-- Navbar brand -->
                 <a class="navbar-brand mt-2 mt-lg-0" href="#">
                     <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" alt="MDB Logo" loading="lazy" />
                 </a>
-                <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Dashboard</a>
@@ -39,18 +32,11 @@
                         <a class="nav-link" href="#">Projects</a>
                     </li>
                 </ul>
-                <!-- Left links -->
             </div>
-            <!-- Collapsible wrapper -->
-
-            <!-- Right elements -->
             <div class="d-flex align-items-center">
-                <!-- Icon -->
                 <a class="text-reset me-3" href="#">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
-
-                <!-- Notifications -->
                 <div class="dropdown">
                     <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-bell"></i>
@@ -68,7 +54,6 @@
                         </li>
                     </ul>
                 </div>
-                <!-- Avatar -->
                 <div class="dropdown">
                     <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
@@ -88,106 +73,132 @@
             </div>
         </div>
     </nav>
-    <!-- SLIDE SHOWW -->
-    <div class="slide-show-container">
-        <div class="img-slide-show-container">
-            <img class="img-slide-show w3-animate-top" id="img-slide-show" src="../RES/awesome-bg-kb.jpg" alt="">
-        </div>
-        <div class="button-container">
-            <div class="slide-show-previous-button" onclick="moveImg(-1)">
-                <div class="previous-button-1 right"></div>
-            </div>
-            <div class="slide-show-next-button" onclick="moveImg(1)">
-                <div class="previous-button-1 left"></div>
-            </div>
-        </div>
-    </div>
-
-    <br>
-    <div class="container main-content">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- END OF NAV BAR -->
+    <div class="container-fluid m-0 p-0">
+        <img src="background-image.jpg" class="img-fluid shadow-sm mb-3 bg-white rounded" alt="Responsive image" style="width: 100%; height: 45vh;">
     </div>
     <br>
-    <div class="container main-content">
+    <div class="container-fluid">
+        <div class="main-content">
             <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                <div class="col-sm-8">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-danger">News</button>
+                    </div>
+                    <div class="container-fluid m-0 p-0">
+
+                        <!-- navbar -->
+                        <div>
+                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                <div class="container-fluid">
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                            <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#genral" id="genral">General</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#business" id="business">Business</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#sports" id="sport">Sports</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" aria-current="page" href="#tehnology" id="technology">Technology</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#entertainment" id="entertainment">Entertainment</a>
+                                            </li>
+                                        </ul>
+                                        <form class="d-flex">
+                                            <input class="form-control me-2" type="text" id="newsQuery" placeholder="Search news">
+                                            <button class="btn btn-outline-primary" type="button" id="searchBtn">Search</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+
+                        <!-- News  -->
+                        <div>
+                            <div class="row m-3" id="newsType"></div>
+                            <div class="row me-2 ms-2" id="newsdetails"></div>
                         </div>
                     </div>
                 </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
+                <div class="col-sm-4">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-danger">Latest News</button>
+                        <button type="button" class="btn">Most Viewed</button>
+                        <br>
                     </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <div class="container p-0 m-0   ">
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4 class="mb-1">List group item heading</h4>
+                                    <small>1 day ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4 class="mb-1">List group item heading</h4>
+                                    <small>2 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4 class="mb-1">List group item heading</h4>
+                                    <small>2 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4 class="mb-1">List group item heading</h4>
+                                    <small>3 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4 class="mb-1">List group item heading</h4>
+                                    <small>5 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4 class="mb-1">List group item heading</h4>
+                                    <small>7 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h4 class="mb-1">List group item heading</h4>
+                                    <small>9 days ago</small>
+                                </div>
+                                <p class="mb-1">Some placeholder content in a paragraph.</p>
+                                <small>And some small print.</small>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-    </div>
-    <div class="container">
-        <hr>
-        <div class="box-1">
-            <h3>Our Vision</h3><br>
-            <p>is of a society served by professionals, impartial, constantly improving police organisation which deserves and enjoys the trust and support of the people.</p>
-        </div>
-        <div class="box-2">
-            <h3>Our Mission</h3><br>
-            <p>is to drive excellent policing through valued and effective oversight and governance.</p>
         </div>
     </div>
-
-    <div class="container">
-
-    </div>
+    <br><br><br>
     <footer class="text-center text-lg-start bg-light text-muted">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <div class="me-5 d-none d-lg-block">
@@ -281,11 +292,7 @@
         </div>
     </footer>
 </body>
-<script src="temp.js">
-
-</script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-
-</script>
+<script src="latest_news.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </html>

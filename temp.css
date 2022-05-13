@@ -142,7 +142,9 @@ html {
 
 /*!!! main content */
 .main-content {
-
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 5%;
     height: auto;
 }
 
@@ -162,4 +164,15 @@ html {
     border: 1px solid black;
     text-align: center;
     height: 43vh;
+  }
+  .box-1 {
+      float: left;
+  }
+  .box-2 {
+      float: right;
+  }
+  .box-1,.box-2 {
+      width: 50%;
+      height: 30vh;
+      padding: 15px;
   }

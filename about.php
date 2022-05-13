@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="temp.css">
+    <title>About</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="about.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Container wrapper -->
         <div class="container-fluid">
             <!-- Toggle button -->
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
 
@@ -25,18 +25,22 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Navbar brand -->
                 <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                    <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" alt="MDB Logo" loading="lazy" />
+                    <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15"
+                        alt="Prison Logo" loading="lazy" />
                 </a>
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                <li class="nav-item">
+                        <a class="nav-link" href="#">Prisoner Information</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Team</a>
+                        <a class="nav-link" href="#">Latest News</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Appointments</a>
                     </li>
                 </ul>
                 <!-- Left links -->
@@ -52,7 +56,8 @@
 
                 <!-- Notifications -->
                 <div class="dropdown">
-                    <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                    <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                        role="button" data-mdb-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-bell"></i>
                         <span class="badge rounded-pill badge-notification bg-danger">1</span>
                     </a>
@@ -70,8 +75,10 @@
                 </div>
                 <!-- Avatar -->
                 <div class="dropdown">
-                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
+                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#"
+                        id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
+                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25"
+                            alt="Icon/Image Profile" loading="lazy" />
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
                         <li>
@@ -88,107 +95,35 @@
             </div>
         </div>
     </nav>
-    <!-- SLIDE SHOWW -->
-    <div class="slide-show-container">
-        <div class="img-slide-show-container">
-            <img class="img-slide-show w3-animate-top" id="img-slide-show" src="../RES/awesome-bg-kb.jpg" alt="">
-        </div>
-        <div class="button-container">
-            <div class="slide-show-previous-button" onclick="moveImg(-1)">
-                <div class="previous-button-1 right"></div>
-            </div>
-            <div class="slide-show-next-button" onclick="moveImg(1)">
-                <div class="previous-button-1 left"></div>
-            </div>
-        </div>
-    </div>
 
-    <br>
-    <div class="container main-content">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <!-- About us  -->
+    <div class="heading-container container-fluid">
+        <span>About Us</span>
     </div>
-    <br>
-    <div class="container main-content">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="background-image.jpg" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <div class="container">
-        <hr>
-        <div class="box-1">
-            <h3>Our Vision</h3><br>
-            <p>is of a society served by professionals, impartial, constantly improving police organisation which deserves and enjoys the trust and support of the people.</p>
-        </div>
-        <div class="box-2">
-            <h3>Our Mission</h3><br>
-            <p>is to drive excellent policing through valued and effective oversight and governance.</p>
+    <div class="container-fluid">
+        <div class="text-container container">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci neque porro nobis soluta magni, sit, corporis corrupti dolorum modi doloribus accusamus quasi debitis nulla eveniet aliquid beatae voluptas veritatis distinctio sapiente! Quam molestias, iste eligendi, molestiae excepturi odio ratione nulla tenetur et maiores, eaque minus.
+        <br><br>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum culpa facilis exercitationem veritatis, alias illo modi numquam. Vel quaerat repellat maiores perspiciatis iure est quis possimus ullam, ab minima libero quam error a tempore laudantium explicabo beatae aspernatur iste adipisci ratione eveniet quae. Sed dignissimos, numquam ad aliquid quia libero rem earum in voluptas sunt. Magnam est minima, accusantium voluptatibus distinctio itaque consequatur consectetur omnis dolor error sunt quaerat fuga eos repudiandae, vero quasi deleniti nesciunt saepe asperiores. Tenetur eaque nisi ut fuga magnam dicta corrupti? Ab vero, sapiente porro sed quae dolorem id cumque? Dolore voluptates dolorem alias ipsum numquam id nesciunt beatae commodi rerum illo optio ullam, ipsam, magnam dignissimos autem amet, unde voluptatem. Quam cum rem eaque!
+
+            </p>
         </div>
     </div>
-
-    <div class="container">
-
-    </div>
-    <footer class="text-center text-lg-start bg-light text-muted">
+    <hr class="hr">
+    <div class="container-fluid container-image">
+        <div class="image container">
+            <img class="shadow p-3 mb-5 bg-white rounded" src="background-image.jpg" alt="">
+        </div>
+        <div class="text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi maiores rem culpa odit harum pariatur mollitia, reiciendis beatae, eveniet, aliquam accusantium cum dolorem distinctio delectus provident quasi quae corrupti expedita iusto molestiae! Doloribus rem eos placeat deleniti facilis, eius ducimus nihil ullam obcaecati, laborum ut exercitationem asperiores incidunt nostrum eveniet?
+            <br>
+            <br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti dolore atque porro iste magnam ducimus libero, placeat obcaecati tenetur cum.
+            <br>
+            <br>
+            </p>
+        </div>
+        <footer class="text-center text-lg-start bg-light text-muted">
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <div class="me-5 d-none d-lg-block">
                 <span>Get connected with us on social networks:</span>
@@ -281,11 +216,10 @@
         </div>
     </footer>
 </body>
-<script src="temp.js">
+<script src="about.js">
 
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-
 </html>
