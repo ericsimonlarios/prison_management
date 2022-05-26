@@ -165,7 +165,6 @@ html {
     text-align: center;
     height: 43vh;
   }
-<<<<<<< HEAD
   .box-1 {
       float: left;
   }
@@ -174,50 +173,6 @@ html {
   }
   .box-1,.box-2 {
       width: 50%;
-      height: 30vh;
+      height: 75vh;
       padding: 15px;
   }
-=======
-.img-appointment{
-    width: 100vw;
-    height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(visitingRoom.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 150%;
-    background-position: center;
-}
-
-.floating-text{
-    color: white;
-    position: absolute;
-    z-index: 1;
-    width: 80%;
-    margin: auto;
-    font-size: 2em;
-    text-align: center;
-}
-.margint-2{
-    margin-top: 2%;
-}
-.appointment-form{
-    width: 95%;
-    margin: auto;
-    margin: 2%;
-}
-.inline{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-.wd-45{
-    width: 45%;
-}
-.alert-handler{
-    display: none;
-    text-align: center;
-    font-size: 14px;
-}
->>>>>>> 426886bfe0d153c1b8c6865ca8d56dd920e0a7e6

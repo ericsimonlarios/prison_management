@@ -62,12 +62,12 @@
     </div>
     </div>
 
-    <?php
+    <!-- <?php
         include "footer.php";
-    ?>
+    ?> -->
 </body>
 <script src="index.js">
 
 </script>
 
-</html>
+</html>     

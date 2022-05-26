@@ -41,7 +41,7 @@ include "nav.php";
         <br>
         <br>
         <h1 style="text-align: center;">Appointment Form</h1>
-        <form class="appointment-form alert alert-secondary" role="alert" method="POST" action="actions.php">
+        <form class="appointment-form alert alert-secondary" role="alert" method="POST" action="actions.php" style="width: 65%;  margin-left: auto; margin-right: auto;">
             <?php
             if (isset($_GET['status'])) {
                 $status  = $_GET['status'];
@@ -100,7 +100,12 @@ include "nav.php";
             <input type="submit" name="appointment-submit" class="btn btn-primary" style="margin:auto;" value="Request Appointment">
         </form>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <?php
     include 'footer.php';
     ?>

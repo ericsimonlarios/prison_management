@@ -122,7 +122,7 @@ include "../dbcon.php";
           <a href="#"><span class="fa fa-gear mr-3"></span> Settings</a>
         </li>
         <li>
-          <a href="#"><span class="fa fa-paper-plane mr-3"></span>Logout</a>
+          <a href=""><span class="fa fa-paper-plane mr-3"></span>Logout</a>
         </li>
       </ul>
 

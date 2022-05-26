@@ -1,3 +1,6 @@
+<?php
+include "nav.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,68 +15,6 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <a class="navbar-brand mt-2 mt-lg-0" href="#">
-                    <img src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp" height="15" alt="MDB Logo" loading="lazy" />
-                </a>
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Team</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="d-flex align-items-center">
-                <a class="text-reset me-3" href="#">
-                    <i class="fas fa-shopping-cart"></i>
-                </a>
-                <div class="dropdown">
-                    <a class="text-reset me-3 dropdown-toggle hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <i class="fas fa-bell"></i>
-                        <span class="badge rounded-pill badge-notification bg-danger">1</span>
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li>
-                            <a class="dropdown-item" href="#">Some news</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Another news</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="dropdown-toggle d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown" aria-expanded="false">
-                        <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" height="25" alt="Black and White Portrait of a Man" loading="lazy" />
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
-                        <li>
-                            <a class="dropdown-item" href="#">My profile</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Settings</a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- END OF NAV BAR -->
     <div class="container-fluid m-0 p-0">
         <img src="background-image.jpg" class="img-fluid shadow-sm mb-3 bg-white rounded" alt="Responsive image" style="width: 100%; height: 45vh;">
     </div>
@@ -136,61 +77,62 @@
                     </div>
                     <div class="container p-0 m-0   ">
                         <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                            <a href="https://www.aljazeera.com/news/2022/5/8/why-the-2022-philippines-election-is-so-significant" class="list-group-item list-group-item-action " aria-current="true">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">List group item heading</h4>
+                                    <h4 class="mb-1">Why the 2022 Philippines election is so significant</h4>
                                     <small>1 day ago</small>
                                 </div>
-                                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                <small>And some small print.</small>
+                                <p class="mb-1">The philippines goes to poll on May 9...</p>
+                                <small>ALJAZEERA</small>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                            <a href="https://www.aljazeera.com/news/2022/5/7/our-generations-fight-the-robredo-campaign-to-stop-marcos-jr" class="list-group-item list-group-item-action " aria-current="true">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">List group item heading</h4>
+                                    <h4 class="mb-1">‘Our generation’s fight’: Robredo’s campaign to stop Marcos Jr</h4>
                                     <small>2 days ago</small>
                                 </div>
-                                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                <small>And some small print.</small>
+                                <p class="mb-1">This is really a good vs evil...</p>
+                                <small>ALJAZEERA</small>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                            <a href="https://www.aljazeera.com/news/2022/5/4/leila-de-lima-release-urged-after-witnesses-retract-testimony" class="list-group-item list-group-item-action " aria-current="true">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">List group item heading</h4>
+                                    <h4 class="mb-1">Leila de Lima release urged after witnesses retract testimony</h4>
                                     <small>2 days ago</small>
                                 </div>
-                                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                <small>And some small print.</small>
+                                <p class="mb-1">Philippine senator and vocal Duterte critic has been imprisoned for five years over drugs charges she denies.</p>
+                                <small>ALJAZEERA</small>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                            <a href="https://www.aljazeera.com/news/2022/3/28/us-philippines-kick-off-their-largest-ever-war-games" class="list-group-item list-group-item-action " aria-current="true">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">List group item heading</h4>
+                                    <h4 class="mb-1">US, Philippines kick off their largest-ever military drills</h4>
                                     <small>3 days ago</small>
                                 </div>
-                                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                <small>And some small print.</small>
+                                <p class="mb-1">Nearly 9,000 Filipino and American soldiers will take part in the 12-day joint military drills, signalling the deepening of ties.</p>
+                                <small>ALJAZEERA</small>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                            <a href="https://www.theguardian.com/world/2022/may/14/im-disgusted-readers-in-the-philippines-on-the-2022-election-result" class="list-group-item list-group-item-action " aria-current="true">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">List group item heading</h4>
+                                    <h4 class="mb-1">‘I’m disgusted’: readers in the Philippines on the 2022 election result</h4>
                                     <small>5 days ago</small>
                                 </div>
-                                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                <small>And some small print.</small>
+                                <p class="mb-1">Seven Filipinos share their views on the victory of Ferdinand ‘Bongbong’ Marcos Jr and the future they see for the country</p>
+                                <small>The Guardian</small>
                             </a>
-                            <a href="#" class="list-group-item list-group-item-action " aria-current="true">
+                            <a href="https://news.abs-cbn.com/" class="list-group-item list-group-item-action " aria-current="true">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">List group item heading</h4>
+                                    <h4 class="mb-1">Halalan 2022 Philippine Election Results</h4>
                                     <small>7 days ago</small>
                                 </div>
-                                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                <small>And some small print.</small>
+                                <p class="mb-1">Voter Counts...</p>
+                                <small>ABS CBN</small>
                             </a>
                             <a href="#" class="list-group-item list-group-item-action " aria-current="true">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h4 class="mb-1">List group item heading</h4>
+                                    <h4 class="mb-1">Supermajority, family ties shape new Senate</h4>
                                     <small>9 days ago</small>
                                 </div>
-                                <p class="mb-1">Some placeholder content in a paragraph.</p>
-                                <small>And some small print.</small>
+                                <p class="mb-1">The Commission on Elections (Comelec) on Wednesday proclaimed the 12 winners...
+</p>
+                                <small>INQUIRER.NET</small>
                             </a>
                         </div>
                     </div>

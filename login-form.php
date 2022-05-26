@@ -17,7 +17,7 @@ if(isset($_POST['login-submit'])){
     }
 
     if(checkUser($name,$pass,$rank)){
-        header('location: admin-login.php?status=success&message=Login is Success');
+        header('location: admin/today-appointment.php?status=success&message=Login is Success');
         die();
     }else{
         header('location: admin-login.php?status=failed&message=The account you entered does not exist');

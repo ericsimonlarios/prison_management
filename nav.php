@@ -32,13 +32,13 @@
                         <a class="nav-link item" href="temp.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Latest News</a>
+                        <a class="nav-link" href="latest_news.php">Latest News</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="appointment.php">Appointment</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="about.php">About</a>
                     </li>
                 </ul>
                 <!-- Left links -->

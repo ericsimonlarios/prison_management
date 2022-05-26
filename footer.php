@@ -41,7 +41,7 @@
                 <div class="row mt-3">
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Company name
+                            <i class="fas fa-gem me-3"></i>ITECH Prison
                         </h6>
                         <p>
                             Here you can use rows and columns to organize your footer content. Lorem ipsum
@@ -50,16 +50,16 @@
                     </div>
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Products
+                            Language Used
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Angular</a>
+                            <a href="#!" class="text-reset">HTML</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">React</a>
+                            <a href="#!" class="text-reset">CSS</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Vue</a>
+                            <a href="#!" class="text-reset">Bootstrap</a>
                         </p>
                         <p>
                             <a href="#!" class="text-reset">Laravel</a>
@@ -70,26 +70,26 @@
                             Useful links
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Pricing</a>
+                            <a href="latest_news.php" class="text-reset">Latest News</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Settings</a>
+                            <a href="appointment.php" class="text-reset">Appointment</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Orders</a>
+                            <a href="login_form.php" class="text-reset">Login</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Help</a>
+                            <a href="temp.php" class="text-reset">Home</a>
                         </p>
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <h6 class="text-uppercase fw-bold mb-4">
                             Contact
                         </h6>
-                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p><i class="fas fa-home me-3"></i> 1016 Anonas, Sta. Mesa, Maynila, Kalakhang Maynila </p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            info@example.com
+                            ITECHPrison@gmail.com
                         </p>
                         <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
                         <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
