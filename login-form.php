@@ -20,7 +20,7 @@ if(isset($_POST['login-submit'])){
         header('location: admin-login.php?status=success&message=Login is Success');
         die();
     }else{
-        header('location: admin-login.php?status=failed&message=The account you are trying to login does not exist');
+        header('location: admin-login.php?status=failed&message=The account you entered does not exist');
         die();
     }
 }
