@@ -15,3 +15,21 @@
     justify-content: center;
     
 }
+.form{
+    width: 80%;
+    margin: auto;
+    padding: 3%;
+}
+.form-control{
+    font-size: 16px;
+}
+.form label{
+    font-weight: bold;
+}
+.alert{
+    width: 80%;
+    margin: auto;
+}
+.officer-view{
+    font-size: 20px;
+}
