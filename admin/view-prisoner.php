@@ -31,9 +31,9 @@ if (!isset($_SESSION['name'])) {
         <?php
         include 'sidebar.php';
         if (isset($_GET['id'])) {
-            $pol_id = $_GET['id'];
+            $prisoner_id = $_GET['id'];
 
-            $selectQuery  =  " SELECT * FROM police WHERE police_id ='$pol_id'";
+            $selectQuery  =  " SELECT * FROM prisoner WHERE prisoner_id ='$prisoner_id'";
             $selectStmt = $con->query($selectQuery);
             if (!$selectStmt) {
                 $error = $con->errno . ' ' . $con->error;
@@ -43,15 +43,17 @@ if (!isset($_SESSION['name'])) {
             for ($i = 0; $select_rows > $i; ++$i) {
                 $select_row        =  $selectStmt->fetch_array(MYSQLI_ASSOC);
                 $fname             = htmlentities($select_row['first_name']);
-                $mname       = htmlentities($select_row['middle_name']);
-                $lname         = htmlentities($select_row['last_name']);
-                $rank              = htmlentities($select_row['rank']);
-                $bno               = htmlentities($select_row['badge_no']);
+                $mname             = htmlentities($select_row['middle_name']);
+                $lname             = htmlentities($select_row['last_name']);
+                $crime             = htmlentities($select_row['crime']);
+                $sentence          = htmlentities($select_row['sentence']);
                 $address           = htmlentities($select_row['address']);
-                $started           = htmlentities($select_row['date_started']);
+                $started           = htmlentities($select_row['date_jailed']);
                 $status            = htmlentities($select_row['status']);
-                $police_pic        = htmlentities($select_row['police_pic']);
-                $contact           = htmlentities($select_row['contact_no']);
+                $prisoner_pic      = htmlentities($select_row['prisoner_pic']);
+                $pdate             = htmlentities($select_row['parole_date']);
+                $ddate             = htmlentities($select_row['discharge_date']);
+                $remarks            = htmlentities($select_row['remarks']);
             }
         } else {
             header('location: officer-directory.php?status=Error&message=Page is not found');
@@ -61,30 +63,38 @@ if (!isset($_SESSION['name'])) {
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-            <h3 class="mb-5" style="text-align: center;">Officer Details</h3>
+            <h3 class="mb-5" style="text-align: center;">Prisoner Details</h3>
             <div class="appointment-form officer-view alert alert-secondary p-4" role="alert" action="">
                 <div class="form-group inline mb-3">
                     <div class="form-group">
-                        <img id="product_img_container" height="180px" width="180px" src="<?php echo $police_pic ?>" alt="">
+                        <img id="product_img_container" height="180px" width="180px" src="<?php echo $prisoner_pic ?>" alt="">
                     </div>
 
                     <div class="form-group">
                         <label for="floatingInput">Status: <strong><?php echo $status; ?></strong></label><br>
                         <label for="floatingInput">Date Started: <strong><?php echo $started; ?></strong></label><br>
-                        <label for="floatingInput">Badge no: <strong><?php echo $bno; ?></strong></label>
+                        <label for="floatingInput">Crime: <strong><?php echo $crime; ?></strong></label>
                     </div>
                 </div>
                 <div class="form-group inline mb-3">
-                    <label for="floatingInput">Name: <strong><?php echo $fname . " " . $mname[0] . "." . " " . $lname; ?></strong></label>
+                    <label for="floatingInput">Name: <strong><?php echo $fname . " " . strtoupper($mname[0]) . "." . " " . $lname; ?></strong></label>
                 </div>
                 <div class="form-group inline mb-3">
-                    <label for="floatingInput">Rank: <strong><?php echo $rank; ?></strong></label>
+                    <label for="floatingInput">Sentence: <strong><?php echo $sentence; ?></strong></label>
                 </div>
-                <div class="form-group inline mb-3">
-                    <label for="floatingInput">Contact no: <strong><?php echo $contact; ?></strong></label>
+                <div class="form-group row mb-3">
+                    <div class="form-group col">
+                    <label for="floatingInput">Parole Date: <strong><?php echo $pdate; ?></strong></label>
+                    </div>
+                    <div class="form-group col">
+                    <label for="floatingInput">Discharge Date: <strong><?php echo $ddate; ?></strong></label>   
+                    </div>                     
                 </div>
                 <div class="form-group inline mb-3">
                     <label for="floatingInput">Address: <strong><?php echo $address; ?></strong></label>
+                </div>
+                <div class="form-group inline mb-3">
+                    <label for="floatingInput">Remarks: <strong><?php echo $remarks; ?></strong></label>
                 </div>
                 <button id="btn" class="btn btn-primary btn-lg btn-block">Edit</button>
                 
@@ -93,9 +103,9 @@ if (!isset($_SESSION['name'])) {
         </div>
     </div>
     <script>
-        var id = '<?php echo $pol_id ?>'
+        var id = '<?php echo $prisoner_id ?>'
         document.getElementById('btn').onclick = function(){
-            window.location.href = 'edit-officer-form.php?id=' + id
+            window.location.href = 'edit-prisoner-form.php?id=' + id
         }
     </script>
     <script src="js/popper.js"></script>

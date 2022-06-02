@@ -11,7 +11,7 @@ if(isset($_POST['login-submit'])){
         die();
     }
     
-    if(!preg_match("/^[a-zA-Z0-9]*$/", $name) || !preg_match("/^[a-zA-Z0-9]*$/", $pass)) {
+    if(!preg_match("/^[a-zA-Z0-9\-]*$/", $name) || !preg_match("/^[a-zA-Z0-9]*$/", $pass)) {
         header('location: admin-login.php?status=error&message=Only alphanumeric characters are allowed');
         die();
     }
