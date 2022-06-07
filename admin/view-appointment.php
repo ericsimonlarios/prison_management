@@ -1,5 +1,9 @@
 <?php
 include "../dbcon.php";
+session_start();
+if (!isset($_SESSION['name'])) {
+  header('location: ../temp.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,30 +26,10 @@ include "../dbcon.php";
 </head>
 
 <body>
+    
     <div class="wrapper d-flex align-items-stretch">
         <?php
-
-        $f1 = "00:00:00";
-        $from = date('Y-m-d') . " " . $f1;
-        $t1 = "23:59:59";
-        $to = date('Y-m-d') . " " . $t1;
-        $con = connect();
-        $todayQuery  =  " SELECT * FROM appointment WHERE appointment_added BETWEEN '$from' AND '$to' AND stats ='Pending'";
-        $todayStmt = $con->query($todayQuery);
-        if (!$todayStmt) {
-            $error = $con->errno . ' ' . $con->error;
-            echo $error;
-        }
-        $today_rows = $todayStmt->num_rows;
-
-        $mainQuery  =  " SELECT * FROM appointment WHERE stats ='Pending'";
-        $mainStmt = $con->query($mainQuery);
-        if (!$mainStmt) {
-            $error = $con->errno . ' ' . $con->error;
-            echo $error;
-        }
-        $main_rows = $mainStmt->num_rows;
-
+        include 'sidebar.php';
         if (isset($_GET['id'])) {
             $app_id = $_GET['id'];
 
@@ -73,84 +57,7 @@ include "../dbcon.php";
             die();
         }
         ?>
-        <nav id="sidebar">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                    <i class="fa fa-bars"></i>
-                    <span class="sr-only">Toggle Menu</span>
-                </button>
-            </div>
-            <h1><a href="index.html" class="logo">ITECH PRISON</a></h1>
-            <ul class="list-unstyled components mb-5">
-                <li class="active">
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-home mr-3 "></span>Appointments <span class="badge badge-danger"><?php echo $main_rows ?></span> <span class="dropdown-toggle mr-3"></span></a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li class="">
-                            <a href="today-appointment.php">Today <span class="badge badge-danger"><?php echo $today_rows ?></span></a>
-                        </li>
-                        <li>
-                            <a href="#">Pending <span class="badge badge-danger"><?php echo $select_rows ?></span></a>
-                        </li>
-                        <li>
-                            <a href="#">Approved</a>
-                        </li>
-                        <li>
-                            <a href="#">Declined</a>
-                        </li>
-                        <li>
-                            <a href="#">Completed</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#officerSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa-solid fa-user mr-3"></span>Officers<span class="dropdown-toggle mr-3"></span></a>
-                    <ul class="collapse list-unstyled" id="officerSubmenu">
-                        <li>
-                            <a href="#">Officer Directory</a>
-                        </li>
-                        <li>
-                            <a href="#">Add Officers</a>
-                        </li>
-                        <li>
-                            <a href="#">Edit Officers</a>
-                        </li>
-                        <li>
-                            <a href="#">Remove Officers</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#prisonerSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-handcuffs mr-3 "></span>Prisoners<span class="dropdown-toggle mr-3"></span></a>
-                    <ul class="collapse list-unstyled" id="prisonerSubmenu">
-                        <li>
-                            <a href="#">Prisoner Directory</a>
-                        </li>
-                        <li>
-                            <a href="#">Add Prisoners</a>
-                        </li>
-                        <li>
-                            <a href="#">Edit Prisoners</a>
-                        </li>
-                        <li>
-                            <a href="#">Remove Prisoners</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-sticky-note mr-3"></span> Subcription</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-gear mr-3"></span> Settings</a>
-                </li>
-                <li>
-                    <a href="#"><span class="fa fa-paper-plane mr-3"></span>Logout</a>
-                </li>
-            </ul>
-
-        </nav>
-        <?php
-
-        ?>
+       
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
             <h3 class="mb-5" style="text-align: center;">Appointment Details</h3>

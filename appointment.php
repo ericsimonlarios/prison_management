@@ -97,6 +97,7 @@ include "nav.php";
                 <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com" name="pdate">
                 <label for="floatingInput">Choose Appointment Date</label>
             </div>
+            
             <input type="submit" name="appointment-submit" class="btn btn-primary" style="margin:auto;" value="Request Appointment">
         </form>
     </div>
