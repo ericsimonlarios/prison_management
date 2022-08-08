@@ -1,0 +1,236 @@
+<?php
+include "../dbcon.php";
+session_start();
+if (!isset($_SESSION['name'])) {
+    header('location: ../temp.php');
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prison Management</title>
+
+    <link href="css_new/bootstrap.min.css" rel="stylesheet">
+    <link href="css_new/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css_new/custom.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/2.2.3/css/buttons.dataTables.min.css">
+
+
+</head>
+
+<body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <?php include 'sidebar.php'; ?>
+
+            <div class="right_col" role="main">
+                <!-- top tiles -->
+                <div class="row col-12" style="display: inline-block;">
+                    <div id="content" class="p-4 ">
+                        <div class="content-header">
+                            <div class="container-fluid">
+                                <div class="row mb-2">
+                                    <div class="col-sm-12">
+                                        <ol class="breadcrumb float-right">
+                                            <li class="breadcrumb-item"><a href="officer-directory.php.">Officer Directory</a></li>
+                                            <li class="breadcrumb-item"><a href="removed-officer.php.">Removed Officer</a></li>
+                                            <li class="breadcrumb-item active">Edit Officer</li>
+                                        </ol>
+                                    </div><!-- /.col -->
+                                </div><!-- /.row -->
+                            </div><!-- /.container-fluid -->
+                        </div>
+                        <div class="form-group text-center">
+                            <h3 class="mb-4" style="text-align: center;">Edit Officer</h3>
+                        </div>
+                        <?php
+                        if (isset($_GET['status'])) {
+                            $status  = $_GET['status'];
+                            $message = $_GET['message'];
+                            if ($status == 'success') {
+                                echo <<<end
+                        <div style="display:block;" class=" alert alert-success alert-handler mb-3" role="alert">
+                        $message
+                        </div>
+                       end;
+                            } else {
+                                echo <<<end
+                        <div style="display:block;" class=" alert alert-danger alert-handler mb-3" role="alert">
+                        $message
+                        </div>
+                       end;
+                            }
+                        }
+                        if (isset($_GET['id'])) {
+                            $pol_id = $_GET['id'];
+
+                            $selectQuery  =  " SELECT * FROM police LEFT JOIN officer ON police.police_id = officer.officer_id WHERE police.police_id ='$pol_id'";
+                            $selectStmt = $con->query($selectQuery);
+                            if (!$selectStmt) {
+                                $error = $con->errno . ' ' . $con->error;
+                                echo $error;
+                            }
+                            $select_rows = $selectStmt->num_rows;
+                            for ($i = 0; $select_rows > $i; ++$i) {
+                                $select_row        =  $selectStmt->fetch_array(MYSQLI_ASSOC);
+                                $fname             = htmlentities($select_row['first_name']);
+                                $mname             = htmlentities($select_row['middle_name']);
+                                $lname             = htmlentities($select_row['last_name']);
+                                $rank              = htmlentities($select_row['rank']);
+                                $bno               = htmlentities($select_row['badge_no']);
+                                $address           = htmlentities($select_row['address']);
+                                $started           = htmlentities($select_row['date_started']);
+                                $status            = htmlentities($select_row['status']);
+                                $police_pic        = htmlentities($select_row['police_pic']);
+                                $contact           = htmlentities($select_row['contact_no']);
+                                $officer_name      = htmlentities($select_row['officer_name']);
+                                $officer_sex       = htmlentities($select_row['officer_sex']);
+                            }
+                            echo <<<END
+                    <form class="form shadow p-5 bg-white rounded" role="alert" method="POST" enctype="multipart/form-data" action="actions.php">
+                    <h3 class="pt-3 pb-3">Officer Details</h3>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="fName">First Name <span class="text-danger">(Required)</span></label>
+                            <input type="text" class="form-control" id="fName" name="fName" placeholder="First Name" value='$fname'>
+                        </div>
+                        <div class="form-group col">
+                            <label for="mName">Middle Name <span class="text-danger">(Required)</span></label>
+                            <input type="text" class="form-control" id="mName" name="mName" placeholder="Middle Name" value='$mname'>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="lName">Last Name <span class="text-danger">(Required)</span></label>
+                            <input type="text" class="form-control" id="lName" name="lName" placeholder="Last Name" value='$lname'>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="rank">Rank <span class="text-danger">(Required)</span></label>
+                            <input type="text" class="form-control" id="rank" name="rank" placeholder="Rank" value='$rank'>
+                        </div>
+                        <div class="form-group col">
+                            <label for="bno">Badge no. <span class="text-danger">(Required)</span></label>
+                            <input type="text" class="form-control" id="bno" name="bno" placeholder="Badge no." value='$bno' maxlength="6">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="address">Address <span class="text-danger">(Required)</span></label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Address" value='$address'>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="cont">Contact no. <span class="text-danger">(Required)</span></label>
+                            <input type="text" class="form-control" id="cont" name="cont" placeholder="Contact no." value='$contact'" maxlength="11">
+                        </div>
+                        <div class="form-group col">
+                        <label for="sex">Sex assigned at Birth <span class="text-danger">(Required)</span></label>
+                        <select type="text" class="form-control" id="sex" name="sex" placeholder="sex" required>
+                            <option value="$officer_sex" selected hidden>$officer_sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="cont">Status <span class="text-danger">(Required)</span></label>
+                            <select class="form-control" id="cont" name="status" value='$status'">
+                            <option value="$status" selected hidden>$status</option>
+                            <option value="Employed">Employed</option>
+                            <option value="Removed">Removed</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h3 class="pt-3 pb-3">Officer Account Information</h3>
+
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="lName">Username <span class="text-danger">(Required)</span></label>
+                        <input type="text" class="form-control" id="uname" name="uname" value="$officer_name" placeholder="Username" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col">
+                        <label for="lName">Old Password <span class="text-danger">(Leave blank to leave unchanged)</span></label>
+                        <input type="password" class="form-control" id="pass" name="oldpass" placeholder="Password">
+                    </div>
+                </div>
+                <div class="row">
+                <div class="form-group col">
+                    <label for="lName">New Password <span class="text-danger">(Leave blank to leave unchanged)</span></label>
+                    <input type="password" class="form-control" id="pass" name="pass" placeholder="Password">
+                </div>
+                </div>
+                <h3 class="pt-3 pb-3">Officer Image</h3>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="police_pic">Add a picture <span style="color:red;">(Leave blank if there are no changes)</span></label>
+                            <br>
+                            <input type="file" id="police_pic" name="police_pic" >
+                            <br>
+                            <br>
+                            <span><strong>Preview :</strong></span>
+                            <br>
+                            <img id="product_img_container" height="150px" width="150px" src="$police_pic" alt="">
+                            <input type="hidden" value="$police_pic" name="current_police_pic">
+                        </div>
+                    </div>
+                    <input type="hidden" value="$pol_id" name="id">
+                    <input type="hidden" value="$police_pic" name="oldname">
+                    <div class="form-row mt-3">
+                        <div class="col-auto">     
+                            <button type="submit" class="btn btn-success btn-lg btn-block" id="add" name="edit_officer">Edit</button>
+                        </div>
+                        <div class="col-auto">     
+                        <button type='button' class="btn btn-danger btn-lg btn-block" id="cancel" data-whatever = "officer-directory">Cancel</button>
+                    </div>
+                    </div>                
+                </form>
+                END;
+                        } else {
+                            header('location: officer-directory.php?status=Error&message=Page is not found');
+                            die();
+                        }
+                        ?>
+
+                    </div>
+                </div>
+            </div>
+            <?php include "profile.php";  ?>
+        </div>
+        <footer>
+            <div class="pull-right">
+                <strong>Copyright &copy; 2022 <a href="#">Prison Management</a>.</strong> All rights reserved.
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+    </div>
+
+
+    <script>
+        var product_img = document.getElementById('police_pic');
+        product_img.onchange = function(event) {
+            const [file] = product_img.files
+            if (file) {
+                document.getElementById('product_img_container').src = URL.createObjectURL(file);
+            }
+        }
+    </script>
+    <script src="custom.js"></script>
+    <script src="js_new/jquery.min.js"></script>
+    <script src="js_new/bootstrap.bundle.min.js"></script>
+    <script src="js_new/custom.min.js"></script>
+</body>
+
+</html>
