@@ -1,23 +1,3 @@
-<!doctype html>
-<html lang="en">
-
-<head>
-    <title>ITECH PRISON</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/alter.css">
-    <link href="assets/fontawesome-free-6.1.1-web/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
-    <script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
-
-</head>
-
-<body>
 
     <!-- <div id="appointmentWrapper" class="wrapper d-flex align-items-stretch"> -->
     <?php
@@ -44,97 +24,136 @@
     }
     $today_rows = $todayStmt->num_rows;
 
-    // $con = connect();
-    // $approveQuery  =  " SELECT * FROM appointment WHERE stats ='Approved'";
-    // $approveStmt = $con->query($selectQuery);
-    // if (!$approveStmt) {
-    //     $error = $con->errno . ' ' . $con->error;
-    //     echo $error;
-    // }
-    // $approve_rows = $approveStmt->num_rows;
+     
+    $aid  = $_SESSION['id'];
+    $rank = $_SESSION['rank'];
+    if($rank == "admin"){
+      $selectAdmin = "SELECT * FROM admin WHERE admin_id = '$aid'";
+  }else{
+      $selectAdmin = "SELECT * FROM officer LEFT JOIN police ON officer.police_id = police.police_id WHERE officer.officer_id = '$aid'";
+  }
+  if(!$profStmt = $con-> query($selectAdmin)){
+      $error = $con->errno . " " . $con->error;
+      echo $error;
+      die();
+  }
+  $profRows = $profStmt -> fetch_all(MYSQLI_ASSOC);
+  foreach($profRows as $profRow){
+      if($rank == 'admin'){
+          $pic   = $profRow['admin_pic'];
+      }else{
+          $pic   = $profRow['police_pic'];
+      }
+  }
 
     ?>
-    <nav id="sidebar">
-        <div class="custom-menu">
-            <button type="button" data-toggle="collapse" id="sidebarCollapse" class="btn btn-primary">
-                <i class="fa fa-bars"></i>
-                <span class="sr-only">Toggle Menu</span>
-            </button>
-        </div>
-        <h1><a href="index.html" class="logo">ITECH PRISON</a></h1>
-        <ul class="list-unstyled components mb-5">
-            <li class="active">
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-home mr-3 "></span>Appointments <span class="badge badge-danger"><?php echo $select_rows ?></span> <span class="dropdown-toggle mr-3"></span></a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="today-appointment.php">Today <span class="badge badge-danger"><?php echo $today_rows ?></span></a>
-                    </li>
-                    <li>
-                        <a href="pending.php">Pending <span class="badge badge-danger"><?php echo $select_rows ?></span></a>
-                    </li>
-                    <li>
-                        <a href="approved.php">Approved</a>
-                    </li>
-                    <li>
-                        <a href="declined.php">Declined</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#officerSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa-solid fa-user mr-3"></span>Officers<span class="dropdown-toggle mr-3"></span></a>
-                <ul class="collapse list-unstyled" id="officerSubmenu">
-                    <li>
-                        <a href="officer-directory.php">Officer Directory</a>
-                    </li>
+    <div class="col-md-3 left_col">
+              <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                  <a href="dashboard.php" class="site_title"><i class="fa fa-university"></i> <span>REFORM</span></a>
+                </div>
+
+                <div class="clearfix"></div>
+
+                <!-- menu profile quick info -->
+                
+                <!-- /menu profile quick info -->
+
+                <br />
+
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                  <div class="menu_section">
+                    <h3>Dashboard</h3>
+                    <ul class="nav side-menu">
+                      <li>
+                        <a href="dashboard.php"><i class="fa fa-home "></i> Home</a>  
+                      </li>
+                      <li><a><i class="fa fa-book"></i> Appointment  <span class="fa fa-chevron-down"></span><span class="float-right badge badge-danger"><?php echo $select_rows ?></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="pending.php">Pending<span class="float-right badge badge-danger"><?php echo $select_rows ?></span> </a> </li>
+                          <li><a href="approved.php">Approved</a></li>
+                          <li><a href="declined.php">Decline</a></li>
+                        </ul>
+                      </li>
+                      <li><a><i class="fa fa-user"></i> Officers <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="officer-directory.php">Officer Directory</a> </li>
+                          <li><a href="removed-officer.php">Removed Officer</a></li>
+                        </ul>
+                      </li>
+                      <li><a><i class="fa fa-barcode"></i> Prisoners <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                          <li><a href="prisoner-directory.php">Prisoner Directory</a> </li>
+                          <li><a href="released-prisoner.php">Released Prisoners</a></li>
+                        </ul>
+                      </li>
+                    <?php 
+                        if($_SESSION['rank'] == 'admin'){
+                            echo <<< END
+                              <li><a><i class="fa fa-database"></i> Master List <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                  <li><a href="prison-list.php">Prison List</a> </li>
+                                  <li><a href="cell-list.php">Cell List</a></li>
+                                  <li><a href="action-list.php">Action List</a></li>
+                                </ul>
+                              </li>
+                            END;
+                        }
+                    ?>
                     <?php
                     if ($_SESSION['rank'] == 'admin') {
                         echo <<< END
-                                <li>
-                                <a href="add-officer-form.php">Add Officers</a>
-                                </li>
-                                END;
-                    }
+                              <li>
+                                <a href="admin-directory.php"><i class="fa fa-user "></i> Admin</a>  
+                              </li>
+                            END;
+                        }
                     ?>
-                    <li>
-                        <a href="removed-officer.php">Removed Officers</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#prisonerSubmenu" data-toggle="collapse" aria-expanded="false"><span class="fa fa-handcuffs mr-3 "></span>Prisoners<span class="dropdown-toggle mr-3"></span></a>
-                <ul class="collapse list-unstyled" id="prisonerSubmenu">
-                    <li>
-                        <a href="prisoner-directory.php">Prisoner Directory</a>
-                    </li>
-                    <li>
-                        <a href="add-prisoner-form.php">Add Prisoners</a>
-                    </li>
-                    <li>
-                        <a href="released-prisoner.php">Released Prisoners</a>
-                    </li>
-                </ul>
-            </li>
-            <?php
-                if ($_SESSION['rank'] == 'admin') {
-                    echo <<< END
-                    <li>
-                        <a href="admin-setting.php"><span class="fa fa-gear mr-3"></span> Settings</a>
-                    </li>
-                    END;
-                }else{
-                    echo <<< END
-                    <li>
-                        <a href="officer-setting.php"><span class="fa fa-gear mr-3"></span> Settings</a>
-                    </li>
-                    END;
-                }
-            ?>
-            <li>
-                <a href="logout.php"><span class="fa fa-paper-plane mr-3"></span>Logout</a>
-            </li>
-        </ul>
-    </nav>
-    <!-- </div> -->
-</body>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /sidebar menu -->
 
-</html>
+                <!-- /menu footer buttons -->
+                <div class="sidebar-footer hidden-small">
+                  <a>
+                    <span class="glyphicon" aria-hidden="true"></span>
+                  </a>
+                  <a >
+                    <span class="glyphicon " aria-hidden="true"></span>
+                  </a>
+                  <a >
+                    <span class="glyphicon " aria-hidden="true"></span>
+                  </a>
+                  <a data-toggle="tooltip" data-placement="top" title="Logout" href="logout.php">
+                    <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                  </a>
+                </div>
+                <!-- /menu footer buttons -->
+              </div>
+            </div>
+
+            <div class="top_nav">
+              <div class="nav_menu">
+                  <div class="nav toggle">
+                    <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                  </div>
+                  <nav class="nav navbar-nav">
+                  <ul class=" navbar-right">
+                    <li class="nav-item dropdown open" style="padding-left: 15px;">
+                      <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                        <img src="<?php echo $pic ?>" alt=""><?php echo $_SESSION['fname']; ?>
+                      </a>
+                      <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#profileModal"> Profile</a>
+                        <a class="dropdown-item"  href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                      </div>
+                    </li>
+
+                  </ul>
+                </nav>
+              </div>
+            </div>
+           </div> 
+    <!-- </div> -->

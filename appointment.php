@@ -20,7 +20,7 @@ include "nav.php";
     <div class="img-appointment">
 
         <div class="floating-text">
-            Want to visit someone in ITECH Prison? <br><br> Alert the authorities and Set up an appointment now!
+            Want to visit someone in REFORM? <br><br> Alert the authorities and set up an Appointment now!
         </div>
 
     </div>
@@ -31,7 +31,7 @@ include "nav.php";
             Note:
             <ul>
                 <li>Visiting hours are only available from 8:00 AM to 5:00 PM </li>
-                <li>You may see the result of your appointment request are your GMAIL</li>
+                <li>You may see the result of your appointment request in your GMAIL</li>
                 <li>Appointment results may take 1-2 days to approve</li>
                 <li>Requesting an appointment to prisoners that already used up their monthly visitation capacity will be automatically declined</li>
                 <li>Valid ID are required upon visiting the Detention Facility, failure to provide one will invalidate your appointment</li>
@@ -40,8 +40,7 @@ include "nav.php";
 
         <br>
         <br>
-        <h1 style="text-align: center;">Appointment Form</h1>
-        <form class="appointment-form alert alert-secondary" role="alert" method="POST" action="actions.php" style="width: 65%;  margin-left: auto; margin-right: auto;">
+        <h1 class="text-center">Appointment Form</h1>
             <?php
             if (isset($_GET['status'])) {
                 $status  = $_GET['status'];
@@ -62,44 +61,54 @@ include "nav.php";
                 }
             }
             ?>
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="vname">
-                <label for="floatingInput">Enter Visitor's Name</label>
-            </div>
+            <form class="appointment-form shadow p-5 bg-white rounded alert alert-dark mt-4" role="alert" method="POST" action="actions.php" style="width: 80%;  margin-left: auto; margin-right: auto;">
 
-            <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="vemail">
-                <label for="floatingInput">Enter Email</label>
-            </div>
+                <div class="form-group">
+                      
+                    <div class="form-group mb-3">
+                        <label for="floatingInput">Visitor Name <span class="text-danger">(Required)</span></label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Name" name="vname" required>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" maxlength="11" name="vcontact">
-                <label for="floatingInput">Enter Contact no.</label>
-            </div>
+                    <div class="form-group mb-3">
+                        <label for="floatingInput">Email <span class="text-danger">(Required)</span></label>
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="vemail">
+                    </div>
 
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="vadd">
-                <label for="floatingInput">Enter Address</label>
-            </div>
+                    <div class="form-group mb-3">
+                        <label for="floatingInput">Contact no. <span class="text-danger">(Required)</span></label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Contact no." maxlength="11" name="vcontact" required>
+                    </div>
 
-            <div class="form-group inline">
-                <div class="form-floating mb-3 wd-45">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="pfirst">
-                    <label for="floatingInput">Enter Prisoner's First Name</label>
-                </div>
-                <div class="form-floating mb-3 wd-45">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" name="plast">
-                    <label for="floatingInput">Enter Prisoner's Last Name</label>
-                </div>
-            </div>
+                    <div class="form-group mb-3">
+                        <label for="floatingInput">Address <span class="text-danger">(Required)</span></label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Address" name="vadd" required>
+                    </div>
 
-            <div class="form-floating mb-3">
-                <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com" name="pdate">
-                <label for="floatingInput">Choose Appointment Date</label>
-            </div>
-            
-            <input type="submit" name="appointment-submit" class="btn btn-primary" style="margin:auto;" value="Request Appointment">
-        </form>
+                    <div class="form-group mb-3">
+                        <label for="floatingInput">Inmate First Name <span class="text-danger">(Required)</span></label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="First Name" name="pfirst" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="floatingInput">Inmate Last Name <span class="text-danger">(Required)</span></label>
+                        <input type="text" class="form-control" id="floatingInput" placeholder="Last Name" name="plast" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="floatingInput">Relation <span class="text-danger">(Required)</span></label>
+                        <input type="text" class="form-control" id="relation" placeholder="Relation" name="relation" required>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label for="floatingInput">Appointment Date <span class="text-danger">(Required)</span></label>
+                        <input type="date" class="form-control" id="floatingInput" placeholder="name@example.com" name="pdate" required>
+                    </div>
+                    <input type="hidden" value="not" name="rank">
+                    <input type="hidden" id="type" name="type" value="add">
+
+                </div>    
+                
+                <input type="submit" name="appointment-submit" class="btn btn-success" style="margin:auto;" value="Request Appointment">
+
+            </form>
     </div>
     <br>
     <br>

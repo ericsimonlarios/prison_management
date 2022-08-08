@@ -21,8 +21,7 @@ function changeImg(n){
     slide=n;
 }
 function showImg(n){
-    var dots = document.getElementsByClassName("flickity-dots");
-    if(n > dots.length){
+    if(n > imgArray.length){
         slideIndex = 1;
         n = slideIndex;
     }
@@ -30,12 +29,12 @@ function showImg(n){
         slideIndex = 3;
         n = slideIndex;
     }
-    for(var i=0; i < dots.length; ++i){
-        dots[i].className = dots[i].className.replace("current-img", " ");    
+    for(var i=0; i < imgArray.length; ++i){
+        imgArray[i].className = imgArray[i].className.replace("current-img", " ");    
     }
-    for (var j=0; j<=dots.length; j++){
+    for (var j=0; j<=imgArray.length; j++){
         if(j == n-1){
-            dots[j].classList.add("current-img");
+            imgArray[j].classList.add("current-img");
             document.getElementById("img-slide-show").src=imgArray[j];
             break;
         }
@@ -43,23 +42,23 @@ function showImg(n){
     
 }
 function imgLoop(){
-    var dots = document.getElementsByClassName("flickity-dots");
+    var imgArray = document.getElementsByClassName("flickity-imgArray");
    
     if(slide < 0){
         slide = 2;
     }
-    if(slide > dots.length){
-        slide = dots.length;
+    if(slide > imgArray.length){
+        slide = imgArray.length;
     }
-    if(slide == dots.length){
+    if(slide == imgArray.length){
         slide = 0;
     }
-    for(var i=0; i < dots.length; ++i){
-        dots[i].className = dots[i].className.replace("current-img", " ");    
+    for(var i=0; i < imgArray.length; ++i){
+        imgArray[i].className = imgArray[i].className.replace("current-img", " ");    
     }
-    for (var j=0; j<=dots.length; j++){
+    for (var j=0; j<=imgArray.length; j++){
         if(j == slide){
-            dots[j].classList.add("current-img");
+            imgArray[j].classList.add("current-img");
             document.getElementById("img-slide-show").src=imgArray[j];
             break;
         }

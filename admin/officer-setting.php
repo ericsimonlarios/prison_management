@@ -35,7 +35,6 @@ if (!isset($_SESSION['name'])) {
             if (isset($_GET['status'])) {
                 $status  = $_GET['status'];
                 $message = $_GET['message'];
-                echo "<script>alert('$message')</script>";
                 if ($status == 'success') {
                     echo <<<end
                         <div style="display:block;" class=" alert alert-success alert-handler mb-3" role="alert">

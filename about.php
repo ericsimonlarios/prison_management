@@ -15,7 +15,7 @@ include "nav.php";
 </head>
 <body>
     <div class="heading-container container-fluid">
-        <span style="text-align: center;">About Us  <br> & History of Prison</span>
+        <span style="text-align: center;">About Us & History of Prison</span>
     </div>
     <div class="container-fluid">
         <div class="text-container container">

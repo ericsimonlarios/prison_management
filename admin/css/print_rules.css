@@ -1,0 +1,6 @@
+@media print 
+{
+#no-print-this,  th:nth-last-child(1), tr > td:last-of-type, .no-print-this {
+display: none !important;
+}
+}

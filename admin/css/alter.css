@@ -43,3 +43,23 @@
 .text:focus{
     box-shadow: 2px 2px 20px rgb(188, 30, 146);
 }
+.inline {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+a:link {
+    text-decoration: none;
+    font-size: 1em;
+}
+.text{
+    outline: 0;
+    box-shadow: 0 0 0;
+  
+}
+.prisoner-view{
+    font-size: 1em;
+}
+.text-size{
+    font-size: .75em;
+}

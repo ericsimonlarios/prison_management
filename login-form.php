@@ -17,7 +17,7 @@ if(isset($_POST['login-submit'])){
     }
 
     if(checkUser($name,$pass,$rank)){
-        header('location: admin/today-appointment.php?status=success&message=Login is Success');
+        header('location: admin/dashboard.php?status=success&message=Login is Success');
         die();
     }else{
         header('location: admin-login.php?status=failed&message=The account you entered does not exist');
@@ -71,8 +71,12 @@ function checkUser($name,$pass,$rank){
         header("location: admin-login.php");
         die();
     }
-
-    $checkUsername = "SELECT * FROM $rank where $rank" . "_name = '$name'" ;
+    if($rank == 'admin'){
+        $checkUsername = "SELECT * FROM $rank where $rank" . "_name = '$name'" ;
+    }else{
+        $checkUsername = "SELECT * FROM officer LEFT JOIN police ON officer.police_id  = police.police_id  where officer_name = '$name' AND police.status = 'Employed'" ;
+    }
+  
     $checkStmt = $con->query($checkUsername); 
     if(!$checkStmt){
         $error = $con->errno . " " . $con->error;
@@ -85,14 +89,36 @@ function checkUser($name,$pass,$rank){
             $getRow     = $checkStmt ->  fetch_array(MYSQLI_ASSOC);
             $getname    = htmlspecialchars($getRow[$rank . '_name']);
             $getpass    = htmlspecialchars($getRow[$rank . '_pass']);
-            $getId      = htmlspecialchars($getRow[$rank . '_id']);
+            $getId      = htmlspecialchars($getRow[$rank . '_id']);        
         }
+        if($rank == 'admin'){
+            $fname = htmlspecialchars($getRow['fname']);
+            $lname = htmlspecialchars($getRow['lname']);
+        }else{
+            $polid = htmlspecialchars($getRow['police_id']);
 
+            $checkUsername = "SELECT * FROM police where police_id = '$polid'" ;
+            $checkStmt = $con->query($checkUsername); 
+            if(!$checkStmt){
+                $error = $con->errno . " " . $con->error;
+                echo $error;
+                die();
+            }
+            $checkRows = $checkStmt -> num_rows;
+            for($i=0; $checkRows > $i; ++$i){
+                $getRow     = $checkStmt ->  fetch_array(MYSQLI_ASSOC);
+                $fname = htmlspecialchars($getRow['first_name']);
+                $lname = htmlspecialchars($getRow['last_name']);
+            }
+        }
+      
         if(password_verify($pass, $getpass)){
             session_start();
             $_SESSION['start']  = time();
             $_SESSION['id']     = $getId;
             $_SESSION['name']   = $getname;
+            $_SESSION['fname']   = $fname;
+            $_SESSION['lname']   = $lname;
             $_SESSION['rank']   = $rank; 
             $_SESSION['check'] = hash('ripemd128', $_SERVER['REMOTE_ADDR'], $_SERVER['HTTP_USER_AGENT']);
 
